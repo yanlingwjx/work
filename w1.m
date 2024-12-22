@@ -39,10 +39,10 @@ function histogram_processing()
     % 显示参考图像及其直方图
     subplot(3,3,3); imshow(ref_img_gray); title('参考图像');
     subplot(3,3,6); imhist(ref_img_gray); title('参考直方图');
-end
-
-function h = nHistogram(I)
+    function h = nHistogram(I)
     % 计算归一化的直方图
     h = imhist(I);
     h = h / sum(h);
+    end
 end
+
