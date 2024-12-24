@@ -1,4 +1,4 @@
-function image_processing_with_noise_and_filtering()
+function w4()
     % 打开一幅图像
     [filename, pathname] = uigetfile({'*.jpg; *.jpeg; *.png; *.bmp', '所有图像文件'; '*.*', '所有文件'}, '选择一个图像文件');
     if ischar(filename)
@@ -38,10 +38,10 @@ end
 function noisy_img = add_noise(img, noise_type)
     switch lower(noise_type)
         case 'gaussian'
-            % 添加均值为0，方差为0.01的高斯噪声
+            % 添加均值为0，方差为0.01的高斯噪声(可修改)
             noisy_img = imnoise(img, 'gaussian', 0, 0.01);
         case 'saltpepper'
-            % 添加密度为0.05的椒盐噪声
+            % 添加密度为0.05的椒盐噪声(可修改)
             noisy_img = imnoise(img, 'salt & pepper', 0.05);
         otherwise
             error('未知的噪声类型');

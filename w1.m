@@ -1,4 +1,4 @@
-function histogram_processing()
+function w1()
     % 打开一幅图像
     [filename, pathname] = uigetfile({'*.jpg; *.jpeg; *.png; *.bmp', '所有图像文件'; '*.*', '所有文件'}, '选择一个图像文件');
     if ischar(filename)
@@ -32,7 +32,7 @@ function histogram_processing()
     ref_img_gray = imresize(ref_img_gray, size(img_gray));
 
     % 进行直方图匹配
-    img_matched = histeq(img_gray, nHistogram(ref_img_gray));
+    img_matched = imhistmatch(img_gray, ref_img_gray); % 使用imhistmatch进行直方图匹配
     subplot(3,3,7); imshow(img_matched); title('直方图匹配后的图像');
     subplot(3,3,8); imhist(img_matched); title('匹配后直方图');
 

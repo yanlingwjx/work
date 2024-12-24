@@ -1,4 +1,4 @@
-function edge_detection()
+function w5()
     % 打开一幅图像
     [filename, pathname] = uigetfile({'*.jpg; *.jpeg; *.png; *.bmp', '所有图像文件'; '*.*', '所有文件'}, '选择一个图像文件');
     if ischar(filename)
